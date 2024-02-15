@@ -1,4 +1,4 @@
-
+ 
 /*
  * Copyright (c) 2020 The ZMK Contributors
  * Copyright (c) 2023 Innaworks Development Limited, trading as MoErgo
@@ -22,11 +22,10 @@
 
 /* Automatically generated layer name #define */
 #define LAYER_Base 0
-#define LAYER_Lower 1
-#define LAYER_Magic 2
-#define LAYER_colemak 3
+#define LAYER_MediaNum 1
+#define LAYER_SymNav 2
+#define LAYER_Magic 3
 #define LAYER_Factory 4
-#define LAYER_6 5
 
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 #ifndef LAYER_Lower
@@ -277,16 +276,16 @@
 
         layer_Base {
             bindings = <
-               &kp F1     &kp F2        &kp F3        &kp F4     &kp F5                                                                                                                       &kp F6         &kp F7       &kp F8       &kp F9         &kp F10
-                &none     &kp N1        &kp N2        &kp N3     &kp N4  &kp N5                                                                                                   &kp N6      &kp N7         &kp N8       &kp N9       &kp N0       &kp EQUAL
-              &kp TAB      &kp Q         &kp W         &kp E      &kp R   &kp T                                                                                                    &kp Y       &kp U          &kp I        &kp O        &kp P       &kp MINUS
-        &mt LCTRL ESC      &kp A         &kp S         &kp D      &kp F   &kp G                                                                                                    &kp H       &kp J          &kp K        &kp L     &kp SEMI    &mt LGUI SQT
-            &sk LSHFT      &kp Z         &kp X         &kp C      &kp V   &kp B  &mt LSHFT LPAR   &mt LALT LBKT  &mt LCTRL PG_DN  &mt RCTRL PG_UP  &mt RALT RBKT  &mt RSHFT RPAR   &kp N       &kp M      &kp COMMA      &kp DOT     &kp FSLH  &mt RSHFT BSLH
- &magic LAYER_Magic 0  &lt 5 TAB  &mt LALT RET  &mt LGUI TAB  &lt 1 ESC                &kp BSPC  &mt LGUI SPACE           &lower       &caps_word  &mt RCTRL RET       &kp SPACE          &lt 1 LEFT  &mt RGUI DOWN  &mt RALT UP  &lt 5 RIGHT       &kp GRAVE
+               &kp F1      &kp F2        &kp F3        &kp F4     &kp F5                                                                                                                     &kp F6         &kp F7       &kp F8       &kp F9         &kp F10
+            &kp EQUAL      &kp N1        &kp N2        &kp N3     &kp N4  &kp N5                                                                                                 &kp N6      &kp N7         &kp N8       &kp N9       &kp N0       &kp GRAVE
+              &kp TAB       &kp Q         &kp W         &kp E      &kp R   &kp T                                                                                                  &kp Y       &kp U          &kp I        &kp O        &kp P       &kp MINUS
+        &mt LCTRL ESC       &kp A         &kp S         &kp D      &kp F   &kp G                                                                                                  &kp H       &kp J          &kp K        &kp L     &kp SEMI         &kp SQT
+            &sk LSHFT       &kp Z         &kp X         &kp C      &kp V   &kp B  &mt LSHFT LPAR   &mt LALT LBKT  &mt LCTRL LBRC  &mt RCTRL RBRC  &mt RALT RBKT  &mt RSHFT RPAR   &kp N       &kp M      &kp COMMA      &kp DOT     &kp FSLH  &mt RSHFT BSLH
+ &magic LAYER_Magic 0  &lt 2 BSPC  &mt LALT RET  &mt LGUI TAB  &lt 1 ESC          &mt LGUI SPACE  &mt LCTRL BSPC       &kp PG_DN       &kp PG_UP  &mt RCTRL RET       &kp SPACE          &lt 1 LEFT  &mt RGUI DOWN  &mt RALT UP  &lt 2 RIGHT      &caps_word
             >;
         };
 
-        layer_Lower {
+        layer_MediaNum {
             bindings = <
      &none     &none    &none     &none     &none                                                                                                                                                               &none     &none     &none     &none    &none
      &none     &none    &none     &none     &none      &none                                                                                                                                          &none     &none     &none     &none     &none    &none
@@ -294,6 +293,17 @@
  &kp TILDE    &kp N1   &kp N2    &kp N3    &kp N4     &kp N5                                                                                                                                         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0  &kp F23
  &kp GRAVE  &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP                         &kp C_PREV                              &kp C_NEXT       &kp C_PP  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp F24
     &trans    &trans   &trans    &trans    &trans             &kp LC(LEFT)  &kp C_BRI_DN  &kp C_BRI_UP  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp LC(RIGHT)               &trans    &trans    &trans    &trans   &trans
+            >;
+        };
+
+        layer_SymNav {
+            bindings = <
+  &none   &none          &none          &none              &none                                                                                                                        &none          &none        &none      &none   &none
+  &none   &none          &none          &none              &none              &none                                                                                           &none     &none          &none        &none      &none   &none
+  &none   &none   &kp LC(LEFT)         &kp UP      &kp LC(RIGHT)         &kp LC(UP)                                                                                       &kp TILDE  &kp LPAR       &kp RPAR      &kp DQT    &kp SQT   &none
+  &none   &none       &kp LEFT       &kp DOWN          &kp RIGHT       &kp LC(DOWN)                                                                                       &kp GRAVE  &kp LBKT       &kp RBKT    &kp COLON   &kp SEMI   &none
+  &none   &none  &kp LS(LC(P))  &kp LS(LC(X))  &kp LS(LC(SPACE))  &kp LS(LA(SPACE))  &kt LG(LS(BSLH))  &kt LG(LS(A))  &kt LC(LS(SPACE))  &kp LC(S)  &kp LC(D)  &kp LC(U)  &kp EQUAL  &kp LBRC       &kp RBRC    &kp UNDER  &kp MINUS   &none
+  &none   &none      &kp LG(C)      &kp LG(V)      &kp LG(LS(V))                             &kp CAPS    &kp LG(TAB)    &kp LG(LS(TAB))  &kp LC(V)  &kp LC(S)  &kp LC(W)             &kp FSLH  &kp LS(COMMA)  &kp LS(DOT)   &kp BSLH   &none
             >;
         };
 
@@ -308,17 +318,6 @@
             >;
         };
 
-        layer_colemak {
-            bindings = <
- &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans   &kp D  &trans   &kp K                                                  &trans  &trans  &trans   &kp L  &trans  &trans
- &trans  &trans  &trans   &kp T  &trans  &trans                                                  &trans   &kp N   &kp E   &kp O  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &kp J  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
         layer_Factory {
             bindings = <
  &kp NUMBER_0  &kp NUMBER_6  &kp NUMBER_2  &kp NUMBER_8  &kp NUMBER_4                                                                                                                  &kp NUMBER_4  &kp NUMBER_8  &kp NUMBER_2  &kp NUMBER_6  &kp NUMBER_0
@@ -327,17 +326,6 @@
  &kp NUMBER_3  &kp NUMBER_9  &kp NUMBER_5  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_2                                                                                      &kp NUMBER_2  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5  &kp NUMBER_9  &kp NUMBER_3
  &kp NUMBER_4  &kp NUMBER_0  &kp NUMBER_6  &kp NUMBER_2  &kp NUMBER_8  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &kp NUMBER_3  &kp NUMBER_8  &kp NUMBER_2  &kp NUMBER_6  &kp NUMBER_0  &kp NUMBER_4
  &kp NUMBER_5  &kp NUMBER_1  &kp NUMBER_7  &kp NUMBER_3  &kp NUMBER_9                &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7                &kp NUMBER_9  &kp NUMBER_3  &kp NUMBER_7  &kp NUMBER_1  &kp NUMBER_5
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-  &none   &none          &none          &none              &none                                                                                                                        &none          &none        &none      &none   &none
-  &none   &none          &none          &none              &none              &none                                                                                           &none     &none          &none        &none      &none   &none
-  &none   &none   &kp LC(LEFT)         &kp UP      &kp LC(RIGHT)         &kp LC(UP)                                                                                       &kp TILDE  &kp LPAR       &kp RPAR      &kp DQT    &kp SQT   &none
-  &none   &none       &kp LEFT       &kp DOWN          &kp RIGHT       &kp LC(DOWN)                                                                                       &kp GRAVE  &kp LBKT       &kp RBKT    &kp COLON   &kp SEMI   &none
-  &none   &none  &kp LS(LC(P))  &kp LS(LC(X))  &kp LS(LC(SPACE))  &kp LS(LA(SPACE))  &kt LG(LS(BSLH))  &kt LG(LS(A))  &kt LC(LS(SPACE))  &kp LC(S)  &kp LC(D)  &kp LC(U)  &kp EQUAL  &kp LBRC       &kp RBRC    &kp UNDER  &kp MINUS   &none
-  &none   &none      &kp LG(C)      &kp LG(V)      &kp LG(LS(V))                             &kp CAPS    &kp LG(TAB)    &kp LG(LS(TAB))  &kp LC(V)  &kp LC(S)  &kp LC(W)             &kp FSLH  &kp LS(COMMA)  &kp LS(DOT)   &kp BSLH   &none
             >;
         };
 
